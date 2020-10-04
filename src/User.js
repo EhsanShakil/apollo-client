@@ -17,9 +17,14 @@ const User = () => {
   if (error) return <h1>Error</h1>;
   return (
     <div>
-      <p>Data: {JSON.stringify(data)}</p>
-      <p>Name: {data.user.name}</p>
-      <p>Age: {data.user.age}</p>
+      {data.user.map((details) => {
+        return (
+          <div>
+            <p>Name: {details.name}</p>
+            <p>Age: {details.age}</p>
+          </div>
+        );
+      })}
     </div>
   );
 };
